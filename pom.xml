@@ -22,8 +22,8 @@
 
   <groupId>com.dremio.plugin</groupId>
   <version>${version.dremio}</version>
-  <artifactId>dremio-sqlite-plugin</artifactId>
-  <name>Dremio SQLite Community Connector</name>
+  <artifactId>dremio-gremlin-plugin</artifactId>
+  <name>Dremio Gremlin JDBC Connector</name>
 
   <properties>
     <version.dremio>24.3.2-202401241821100032-d2d8a497</version.dremio>
