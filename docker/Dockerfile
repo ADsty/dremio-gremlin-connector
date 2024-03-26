@@ -8,14 +8,10 @@ RUN apt-get -y update \
     && apt-get clean \
     && apt-get install -y unzip git \
     && rm -rf /var/lib/apt/lists/* \
-    && wget http://apache.osuosl.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip \
-    && unzip apache-maven-3.9.6-bin.zip \
-    && wget clone https://github.com/ADsty/dremio-gremlin-connector.git \
-    && cd dremio-gremlin-connector \
-    && export PATH=$PATH:/tmp/apache-maven-3.9.6/bin \
-    && mvn clean install -DskipTests \
-    && cp target/dremio-gremlin-connector*.jar /opt/dremio/jars \
     && cd /opt/dremio/jars \
+    && wget https://github.com/ADsty/dremio-gremlin-connector/blob/master/bin/dremio-gremlin-plugin-24.3.2-202401241821100032-d2d8a497.jar \
+    && chown dremio *dremio-gremlin-plugin*.jar \
+    && cd /opt/dremio/jars/3rdparty \
     && wget https://github.com/aws/amazon-neptune-jdbc-driver/releases/download/v3.0.3/amazon-neptune-jdbc-driver-3.0.3.jar \
     && chown dremio *neptune*.jar \
     && rm -rf ~/.m2 \
