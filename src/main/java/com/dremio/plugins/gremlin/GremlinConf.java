@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.dremio.exec.store.jdbc.conf;
+package com.dremio.plugins.gremlin;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -25,6 +25,7 @@ import com.dremio.exec.catalog.conf.SourceType;
 import com.dremio.exec.store.jdbc.CloseableDataSource;
 import com.dremio.exec.store.jdbc.DataSources;
 import com.dremio.exec.store.jdbc.JdbcPluginConfig;
+import com.dremio.exec.store.jdbc.conf.AbstractArpConf;
 import com.dremio.exec.store.jdbc.dialect.arp.ArpDialect;
 import com.dremio.options.OptionManager;
 import com.dremio.services.credentials.CredentialsService;
