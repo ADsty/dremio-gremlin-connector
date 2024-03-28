@@ -32,6 +32,7 @@ import com.dremio.services.credentials.CredentialsService;
 import com.google.common.annotations.VisibleForTesting;
 
 import io.protostuff.Tag;
+import software.aws.neptune.NeptuneDriver;
 
 /**
  * Configuration for Gremlin sources.
@@ -76,7 +77,6 @@ public class GremlinConf extends AbstractArpConf<GremlinConf> {
   @VisibleForTesting
   public String toJdbcConnectionString() {
     final String database = checkNotNull(this.database, "Missing database.");
-
     return String.format("jdbc:neptune:sqlgremlin://%s", database);
   }
 
